@@ -11,7 +11,6 @@ WHERE SIRVE.BAR IN (
 );
 
 -- Mostrar los nombres de las personas que frecuentan al menos un bar que sirven alguna cerveza que les guste
--- Corregir que a Emilio no le gusta ninguna cerveza
 
 SELECT DISTINCT(FRECUENTA.PERSONA) 
 FROM FRECUENTA
