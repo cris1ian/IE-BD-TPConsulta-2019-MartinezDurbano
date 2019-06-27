@@ -1,14 +1,12 @@
 -- Mostrar los bares que sirven alguna cerveza que le guste a Jorge
 
-SELECT * 
+SELECT DISTINCT(BAR)
 FROM SIRVE
-WHERE SIRVE.BAR IN (
-	SELECT BAR FROM FRECUENTA
-	WHERE FRECUENTA.PERSONA = "JORGE"
-)AND SIRVE.CERVEZA IN (
+WHERE SIRVE.CERVEZA IN (
 	SELECT GUSTA.CERVEZA FROM GUSTA
-	WHERE GUSTA.PERSONA = "JORGE"
-);
+	WHERE GUSTA.PERSONA = 'JORGE'
+)
+ORDER BY BAR;
 
 -- Mostrar los nombres de las personas que frecuentan al menos un bar que sirven alguna cerveza que les guste
 
@@ -19,8 +17,11 @@ INNER JOIN SIRVE ON (GUSTA.CERVEZA = SIRVE.CERVEZA AND FRECUENTA.BAR = SIRVE.BAR
 ORDER BY FRECUENTA.PERSONA ASC;
 
 -- Mostrar los nombres de las personas que sólo frecuentan bares que sirven alguna cerveza que les guste. (Asumir que a cada persona le gusta al menos una cerveza y frecuenta al menos un bar)
--- Agustín  frecuenta HOXON que no sirve ninguna cerveza que le guste
--- Cristian frecuenta NITRO que no sirve ninguna cerveza que le guste
+-- Agustín  frecuenta Hoxon que no sirve ninguna cerveza que le guste
+-- Cristian frecuenta Nitro que no sirve ninguna cerveza que le guste
+-- Jorge frecuenta Belfast y Nitro que no sirven ninguna cerveza que le guste
+-- Emilio frecuenta Asgardian, Nitro y Peñon del Aguila que no sirven ninguna cerveza que le guste
+-- Emilio frecuenta Antares, Eon6 y Peñon del Aguila que no sirven ninguna cerveza que le guste
 
 SELECT Q1.PERSONA
 FROM (
@@ -68,7 +69,7 @@ WHERE FRECUENTA.PERSONA NOT IN (
 ORDER BY FRECUENTA.PERSONA;
 
 -- Mostrar los nombres de las personas que frecuentan todos los bares (Asumir que todos los bares sirven al menos una cerveza)
-SELECT FRECUENTA.PERSONA
+SELECT Q1.PERSONA
 FROM (
 	-- Obtiene cuantos bares frecuenta cada uno
 	SELECT FRECUENTA.PERSONA, COUNT(FRECUENTA.BAR) AS 'CANT'

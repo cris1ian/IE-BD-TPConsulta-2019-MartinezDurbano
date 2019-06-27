@@ -29,24 +29,23 @@
 \usepackage[utf8]{inputenc} 
 \usepackage{listingsutf8}
 
+\definecolor{codedarkgreen}{HTML}{006400}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codeblue}{rgb}{0,0,0.6}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{HTML}{C42043}
-\definecolor{backcolour}{HTML}{F2F2F2}
-\definecolor{bookColor}{cmyk}{0,0,0,0.90}  
-\color{bookColor}
 
+\renewcommand{\thesection}{\arabic{section}}
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
 \setcounter{tocdepth}{5}
 \setcounter{secnumdepth}{5}
 
 \lstdefinestyle{mystyle}{
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{codeblue},
+    commentstyle=\color{codedarkgreen},
+    keywordstyle=\color{magenta},
     numberstyle=\footnotesize\color{codegray},
-    stringstyle=\color{codepurple},
+    stringstyle=\color{red},
     basicstyle=\footnotesize,       
     breaklines=true,                 
     captionpos=b,                    
@@ -57,7 +56,7 @@
 
 \lstset{
     upquote=true, 
-    inputencoding=utf8,
+    inputencoding=utf8/latin1,
     style=mystyle
 }
 
@@ -113,98 +112,10 @@
 \newpage
 
 \section{Instancia de la base de datos}
-\input{instance.tex}
+\input{populateTables.tex}
 \newpage
 
 \section{Consultas SQL} 
 \input{sqlQuerys.tex}
 
-
-%-------------------------------------------------------------------------------
-% REFERENCES
-%-------------------------------------------------------------------------------
-\newpage
-\section*{References}
-
-%[2]John W. Eaton, David Bateman, Sren Hauberg, Rik Wehbring (2015). GNU
-%Octave version 4.0.0 manual: a high-level interactive language for numer-
-%ical computations. Available: http://www.gnu.org/software/octave/doc/
-%interpreter/. 
-
 \end{document}
-
-%-------------------------------------------------------------------------------
-% SNIPPETS
-%-------------------------------------------------------------------------------
-
-%\begin{figure}[!ht]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{file_name}
-%	\caption{}
-%	\centering
-%	\label{label:file_name}
-%\end{figure}
-
-%\begin{figure}[!ht]
-%	\centering
-%	\includegraphics[width=0.8\textwidth]{graph}
-%	\caption{Blood pressure ranges and associated level of hypertension (American Heart Association, 2013).}
-%	\centering
-%	\label{label:graph}
-%\end{figure}
-
-%\begin{wrapfigure}{r}{0.30\textwidth}
-%	\vspace{-40pt}
-%	\begin{center}
-%		\includegraphics[width=0.29\textwidth]{file_name}
-%	\end{center}
-%	\vspace{-20pt}
-%	\caption{}
-%	\label{label:file_name}
-%\end{wrapfigure}
-
-%\begin{wrapfigure}{r}{0.45\textwidth}
-%	\begin{center}
-%		\includegraphics[width=0.29\textwidth]{manometer}
-%	\end{center}
-%	\caption{Aneroid sphygmomanometer with stethoscope (Medicalexpo, 2012).}
-%	\label{label:manometer}
-%\end{wrapfigure}
-
-%\begin{table}[!ht]\footnotesize
-%	\centering
-%	\begin{tabular}{cccccc}
-%	\toprule
-%	\multicolumn{2}{c} {Pearson's correlation test} & \multicolumn{4}{c} {Independent t-test} \\
-%	\midrule	
-%	\multicolumn{2}{c} {Gender} & \multicolumn{2}{c} {Activity level} & \multicolumn{2}{c} {Gender} \\
-%	\midrule
-%	Males & Females & 1st level & 6th level & Males & Females \\
-%	\midrule
-%	\multicolumn{2}{c} {BMI vs. SP} & \multicolumn{2}{c} {Systolic pressure} & \multicolumn{2}{c} {Systolic Pressure} \\
-%	\multicolumn{2}{c} {BMI vs. DP} & \multicolumn{2}{c} {Diastolic pressure} & \multicolumn{2}{c} {Diastolic pressure} \\
-%	\multicolumn{2}{c} {BMI vs. MAP} & \multicolumn{2}{c} {MAP} & \multicolumn{2}{c} {MAP} \\
-%	\multicolumn{2}{c} {W:H ratio vs. SP} & \multicolumn{2}{c} {BMI} & \multicolumn{2}{c} {BMI} \\
-%	\multicolumn{2}{c} {W:H ratio vs. DP} & \multicolumn{2}{c} {W:H ratio} & \multicolumn{2}{c} {W:H ratio} \\
-%	\multicolumn{2}{c} {W:H ratio vs. MAP} & \multicolumn{2}{c} {\% Body fat} & \multicolumn{2}{c} {\% Body fat} \\
-%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Height} & \multicolumn{2}{c} {Height} \\
-%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Weight} & \multicolumn{2}{c} {Weight} \\
-%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Heart rate} & \multicolumn{2}{c} {Heart rate} \\
-%	\bottomrule
-%	\end{tabular}
-%	\caption{Parameters that were analysed and related statistical test performed for current study. BMI - body mass index; SP - systolic pressure; DP - diastolic pressure; MAP - mean arterial pressure; W:H ratio - waist to hip ratio.}
-%	\label{label:tests}
-%\end{table}%\documentclass{article}
-%\usepackage[utf8]{inputenc}
-
-%\title{Weekly Report template}
-%\author{gandhalijuvekar }
-%\date{January 2019}
-
-%\begin{document}
-
-%\maketitle
-
-%\section{Introduction}
-
-%\end{document}
